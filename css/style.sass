@@ -1,0 +1,1088 @@
+html,
+body
+    height: 100%
+    min-width: 320px
+
+button
+    cursor: pointer
+    color: inherit
+    background-color: inherit
+
+//========================================================================================================================================================
+
+#galaxyFit3 a
+    color: inherit
+    text-decoration: none
+
+#galaxyFit3 ul,
+ol,
+li
+    list-style: none
+    padding: 0
+    margin: 0
+
+#galaxyFit3 .bc-description__content p
+    margin-bottom: 0
+
+#galaxyFit3 .bc-description__content h3
+    text-align: left
+
+#galaxyFit3 p
+    margin: 0
+    padding: 0
+    text-align: left
+
+#galaxyFit3 h1,
+#galaxyFit3 h2,
+#galaxyFit3 h3,
+#galaxyFit3 h4,
+#galaxyFit3 h5,
+#galaxyFit3 h6
+    padding: 0
+    margin: 0
+    text-align: left
+    text-transform: none
+    font-weight: bold
+
+#galaxyFit3
+    margin: 0 auto
+    overflow: hidden
+    background-color: #ffffff
+
+#galaxyFit3 p::first-letter
+    padding-left: 0
+
+#galaxyFit3 img
+    opacity: 1
+    max-width: 100%
+    display: block
+    margin: 0
+    // margin: 0 auto
+
+#galaxyFit3 img:hover
+    opacity: 1
+
+@mixin fonts($fontSize, $lineHeight)
+    font:
+        size: $fontSize
+    line:
+        height: $lineHeight
+
+@mixin flex-box($justifyContent, $alignItems)
+    display: flex
+    justify-content: $justifyContent
+    align-items: $alignItems
+
+@mixin bg-image($url)
+    background:
+        image: $url
+    background:
+        repeat: no-repeat
+    background:
+        position: top center
+    background:
+        size: cover
+
+@mixin position($position, $zIndex)
+    position: $position
+    z-index: $zIndex
+
+@mixin adaptive-size($property, $minSize, $maxSize, $maxWidth)
+    $size: calc( #{$minSize}px + ($maxSize - $minSize) * ((100vw - 320px)/($maxWidth - 320)))
+    #{$property}: $size
+
+%flex-img
+    position: relative
+    z-index: 5
+    padding-bottom: 58%
+    img
+        width: 100%
+        height: 100%
+        position: absolute
+        z-index: 6
+        object-fit: cover
+        top: 0
+        left: 0
+
+//========================================================================================================================================================
+#galaxyFit3 .galaxyFit3
+    &__container
+        max-width: 1440px
+        margin: 0 auto
+        padding: 0 15px
+        h2
+            @include fonts($fontSize: 42px, $lineHeight: 1.2)
+            margin-bottom: 40px
+            text-align: center
+        h3
+            @include fonts($fontSize: 32px, $lineHeight: 1.2)
+            margin-bottom: 25px
+        p
+            @include fonts($fontSize: 24px, $lineHeight: 1.2)
+            text-align: center
+    &__box
+        margin-bottom: 100px
+
+#galaxyFit3 .banner-box
+    &__inner
+        @include flex-box($justifyContent: space-between, $alignItems: center)
+        padding: 50px 0 0
+        margin: 0 -25px
+    &__logo
+        flex: 0 1 40%
+        padding: 0 25px
+        img
+            margin: 0 auto
+    &__img
+        flex: 0 1 60%
+        padding: 0 0 0 25px
+
+#galaxyFit3 .galaxyFit3-overview
+    &__inner
+        max-width: 1270px
+        margin: 0 auto
+    &__text
+        padding: 10px 40px
+        max-width: 715px
+        margin: 0 auto 100px
+    &__items
+        @include flex-box($justifyContent: space-between, $alignItems: stretch)
+        height: 652px
+        margin: 0 -10px
+    &__item
+        @include position($position: relative, $zIndex: 5)
+        padding: 0 10px
+        flex: 0 1 25%
+        &_01, &_03
+            align-self: start
+        &_02, &_04
+            align-self: end
+        &_03
+            p
+                span
+                    color: #fff
+    &__item-title
+        @include position($position: absolute, $zIndex: 6)
+        top: 15px
+        left: 30px
+        right: 20px
+        padding: 10px
+        p
+            span
+                display: block
+                text-transform: uppercase
+                font-weight: 700
+                text-align: left
+                font-size: 18px
+
+#galaxyFit3 .galaxyFit3-charge
+    &__inner
+        max-width: 1270px
+        margin: 0 auto
+    &__text
+        padding: 10px 40px
+        max-width: 715px
+        margin: 0 auto
+
+#galaxyFit3 .galaxyFit3-display
+    &__body
+        display: flex
+        max-width: 1270px
+        margin: 0 auto 100px
+    &__text
+        flex: 0 1 50%
+        padding: 0 40px
+        margin-right: 30px
+        h2, p
+            text-align: left
+    &__data
+        flex: 0 1 50%
+        padding: 0 40px
+        display: flex
+        align-items: center
+        margin: 0 -25px
+    &__inch
+        padding: 0 25px
+    &__resol
+        padding: 0 25px
+    &__num
+        margin-bottom: 15px
+        p
+            font-weight: 700
+            span
+                font-size: 60px
+            small
+                @include position($position: relative, $zIndex: 5)
+                top: -0.15em
+
+#galaxyFit3 .galaxyFit3-design
+    &__inner
+        max-width: 1270px
+        margin: -100px auto 0
+    &__text
+        max-width: 715px
+        margin: 0 auto 100px
+    &__content
+        display: flex
+        flex-direction: column
+        margin-top: 50px
+    &__items
+        display: flex
+        margin: 0 -10px 20px
+        &:last-child
+            margin-bottom: 0
+    &__item
+        padding: 0 10px
+        @include position($position: relative, $zIndex: 5)
+    &__item-text
+        @include position($position: absolute, $zIndex: 6)
+        padding: 10px 20px
+        p
+            span
+                font-size: 18px
+                font-weight: 700
+        &_01
+            top: 20px
+            left: 20px
+            p
+                span
+                    color: #fff
+        &_02
+            top: 20px
+            left: 10%
+            right: 30%
+            &::before
+                content: ""
+                @include position($position: absolute, $zIndex: 9)
+                width: 2px
+                height: 125px
+                background-color: #000
+                left: 50%
+                bottom: -125px
+                transform: translateX(-50%)
+        &_03
+            top: 20px
+            left: 52%
+            right: 10%
+        &_04
+            top: 50%
+            transform: translateY(-50%)
+            left: 20px
+            right: 60%
+            p
+                text-align: left
+            &::before
+                content: ""
+                @include position($position: absolute, $zIndex: 9)
+                width: 180px
+                height: 2px
+                background-color: #000
+                top: 50%
+                right: -140px
+                transform: translateY(-50%)
+            &::after
+                content: ""
+                @include position($position: absolute, $zIndex: 9)
+                width: 150px
+                height: 2px
+                background-color: #fff
+                top: 50%
+                right: -170px
+                transform: translateY(-50%)
+        &_05
+            top: 20px
+            left: 20px
+
+#galaxyFit3 .galaxyFit3-tracking
+    &__inner
+        @include position($position: relative, $zIndex: 6)
+    &__text
+        @include position($position: absolute, $zIndex: 7)
+        top: 0
+        left: 50px
+        right: 36%
+        padding: 10px 20px
+        h2, p
+            text-align: left
+
+#galaxyFit3 .galaxyFit3-sleepingMode
+    &__bg
+        @include bg-image($url: url("../img/bg07.jpg"))
+        border-top-left-radius: 55px
+        border-top-right-radius: 55px
+    &__inner
+        @include position($position: relative, $zIndex: 5)
+    &__title
+        @include position($position: absolute, $zIndex: 6)
+        max-width: 715px
+        margin: 0 auto
+        padding: 50px 20px
+        top: 3%
+        left: 50%
+        margin-right: -50%
+        transform: translateX(-50%)
+        h2
+            color: #fff
+    &__img
+        img
+            border-top-left-radius: 55px
+            border-top-right-radius: 55px
+    &__text
+        max-width: 715px
+        margin: 100px auto
+        padding: 0 20px
+        p
+            color: #fff
+    &__content
+        display: flex
+        align-items: center
+        max-width: 1270px
+        margin: 0 auto
+    &__items
+        margin-right: 20px
+    &__item
+        @include position($position: relative, $zIndex: 6)
+        &_01
+            margin-bottom: 20px
+    &__item-title
+        @include position($position: absolute, $zIndex: 7)
+        top: 20px
+        left: 20px
+        padding: 10px 20px
+        p
+            span
+                font-size: 18px
+                color: #fff
+                font-weight: 700
+
+#galaxyFit3 .galaxyFit3-monitoring
+    &__inner
+        max-width: 1270px
+        margin: 0 auto
+    &__text
+        padding: 10px 20px
+        margin-bottom: 90px
+    &__img
+        margin-bottom: 30px
+    &__item
+        padding: 10px 25px
+        p
+            text-align: left
+    &__card
+        padding: 0 40px
+
+#galaxyFit3 .swiper-button-next:after
+    content: ''
+    @include bg-image($url: url('../img/carousel_arrow.svg'))
+    width: 25px
+    height: 25px
+
+#galaxyFit3 .swiper-button-prev:after
+    content: ''
+    @include bg-image($url: url('../img/carousel_arrow.svg'))
+    width: 25px
+    height: 25px
+    transform: scale(-1)
+
+#galaxyFit3 .swiper-button-next, .swiper-rtl .swiper-button-prev
+    top: 27%
+    transform: translateY(-50%)
+
+#galaxyFit3 .swiper-button-prev, .swiper-rtl .swiper-button-next
+    top: 27%
+    transform: translateY(-50%)
+
+#galaxyFit3 .swiper-button-prev.swiper-button-disabled, #galaxyFit3 .swiper-button-next.swiper-button-disabled
+    opacity: 0
+
+#galaxyFit3 .galaxyFit3-health
+    &__inner
+        margin-top: -50px
+    &__text
+        max-width: 715px
+        margin: 0 auto 80px
+        padding: 0 20px
+
+#galaxyFit3 .galaxyFit3-ux
+    &__inner
+        max-width: 1270px
+        margin: 0 auto
+    &__text
+        max-width: 715px
+        margin: 0 auto 80px
+        padding: 0 20px
+    &__content
+        display: flex
+        align-items: center
+        margin: 0 -10px
+    &__item
+        @include position($position: relative, $zIndex: 5)
+        padding: 0 10px
+    &__subtitle
+        @include position($position: absolute, $zIndex: 6)
+        top: 50%
+        left: 2px
+        right: 67%
+        transform: translateY(-50%)
+        p
+            span
+                font-size: 18px
+                font-weight: 700
+    &__image
+        padding: 0 10px
+
+#galaxyFit3 .galaxyFit3-safety
+    &__bg
+        background-color: #000
+        border-top-left-radius: 55px
+        border-top-right-radius: 55px
+    &__inner
+        @include position($position: relative, $zIndex: 5)
+    &__title
+        @include position($position: absolute, $zIndex: 6)
+        max-width: 715px
+        margin: 0 auto
+        padding: 50px 20px
+        top: 3%
+        left: 50%
+        margin-right: -50%
+        transform: translateX(-50%)
+        h2
+            color: #fff
+    &__img
+        img
+            border-top-left-radius: 55px
+            border-top-right-radius: 55px
+    &__text
+        max-width: 715px
+        margin: 100px auto
+        padding: 0 20px
+        p
+            color: #fff
+    &__content
+        max-width: 1270px
+        margin: 0 auto
+    &__items
+        display: flex
+    &__item
+        @include position($position: relative, $zIndex: 6)
+        p
+            span
+                font-size: 18px
+                color: #fff
+                font-weight: 700
+        &_01
+            margin-right: 20px
+    &__item-title
+        @include position($position: absolute, $zIndex: 7)
+        top: 20px
+        left: 20px
+        padding: 10px 20px
+    &__item-subtitle
+        @include position($position: absolute, $zIndex: 7)
+        top: 50%
+        left: 85%
+        right: 10px
+        transform: translateY(-50%)
+
+#galaxyFit3 .galaxyFit3-control, #galaxyFit3 .galaxyFit3-watchfaces, #galaxyFit3 .galaxyFit3-account
+    &__text
+        max-width: 715px
+        margin: 0 auto 80px
+        padding: 0 20px
+
+#galaxyFit3 .galaxyFit3-account
+    &__inner
+        margin-top: -100px
+    &__image
+        display: block
+        padding: 0 15px
+        img
+            margin: 0 auto
+
+//===========MEDIA=============================================================================================================================================
+@media screen and (max-width: 1300px)
+    #galaxyFit3 .galaxyFit3
+        &__container
+            h2
+                @include adaptive-size($property: "font-size", $minSize: 22, $maxSize: 42, $maxWidth: 1300)
+            h3
+                @include adaptive-size($property: "font-size", $minSize: 20, $maxSize: 32, $maxWidth: 1300)
+            p
+                @include adaptive-size($property: "font-size", $minSize: 18, $maxSize: 24, $maxWidth: 1300)
+    #galaxyFit3 .galaxyFit3-overview
+        &__item-title
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 12, $maxSize: 18, $maxWidth: 1300)
+    #galaxyFit3 .galaxyFit3-display
+        &__num
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 24, $maxSize: 60, $maxWidth: 1300)
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 12, $maxSize: 18, $maxWidth: 1300)
+            &_02
+                &::before
+                    height: 110px
+                    bottom: -110px
+            &_03
+                left: 50%
+                right: 5%
+            &_04
+                &::before
+                    @include adaptive-size($property: "width", $minSize: 25, $maxSize: 180, $maxWidth: 1300)
+                    @include adaptive-size($property: "right", $minSize: -20, $maxSize: -140, $maxWidth: 1300)
+                &::after
+                    @include adaptive-size($property: "width", $minSize: 25, $maxSize: 150, $maxWidth: 1300)
+                    @include adaptive-size($property: "right", $minSize: -70, $maxSize: -170, $maxWidth: 1300)
+    #galaxyFit3 .galaxyFit3-tracking
+        &__inner
+            padding-top: 100px
+    #galaxyFit3 .galaxyFit3-sleepingMode
+        &__item-title
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 12, $maxSize: 18, $maxWidth: 1300)
+    #galaxyFit3 .galaxyFit3-ux
+        &__subtitle
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 12, $maxSize: 18, $maxWidth: 1300)
+    #galaxyFit3 .galaxyFit3-safety
+        &__item
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 12, $maxSize: 18, $maxWidth: 1300)
+
+@media screen and (max-width: 1200px)
+    #galaxyFit3 .galaxyFit3-overview
+        &__items
+            height: 580px
+        &__item-title
+            left: 20px
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                &::before
+                    height: 95px
+                    bottom: -95px
+    #galaxyFit3 .galaxyFit3-monitoring
+        &__card
+            padding: 0 35px
+    #galaxyFit3 .swiper-button-next, .swiper-rtl .swiper-button-prev,
+    #galaxyFit3 .swiper-button-prev, .swiper-rtl .swiper-button-next
+        top: 25%
+
+@media screen and (max-width: 1100px)
+    #galaxyFit3 .galaxyFit3-overview
+        &__items
+            height: 540px
+        &__item-title
+            left: 15px
+            right: 15px
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 12, $maxSize: 15, $maxWidth: 1100)
+    #galaxyFit3 .galaxyFit3-display
+        &__text
+            margin-right: 0
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                &::before
+                    height: 75px
+                    bottom: -75px
+            &_03
+                top: 5px
+    #galaxyFit3 .galaxyFit3-tracking
+        &__text
+            left: 20px
+    #galaxyFit3 .swiper-button-next, .swiper-rtl .swiper-button-prev,
+    #galaxyFit3 .swiper-button-prev, .swiper-rtl .swiper-button-next
+        top: 33%
+
+@media screen and (max-width: 1024.98px)
+    #galaxyFit3 .galaxyFit3
+        &__box
+            margin-bottom: 50px
+    #galaxyFit3 .galaxyFit3-overview
+        &__text
+            margin-bottom: 50px
+        &__items
+            height: 500px
+        &__item
+            p
+                span
+                    @include adaptive-size($property: "font-size", $minSize: 12, $maxSize: 13, $maxWidth: 1024)
+    #galaxyFit3 .galaxyFit3-display
+        &__body
+            margin-bottom: 50px
+        &__text, &__data
+            padding: 0 20px 0 40px
+        &__data
+            margin: 0 -20px
+        &__inch, &__resol
+            padding: 0 20px
+    #galaxyFit3 .galaxyFit3-design
+        &__inner
+            margin-top: -50px
+        &__text
+            margin-bottom: 50px
+        &__content
+            margin-top: 25px
+    #galaxyFit3 .galaxyFit3-tracking
+        &__inner
+            padding-top: 150px
+    #galaxyFit3 .galaxyFit3-sleepingMode
+        &__title
+            top: 1%
+        &__text
+            margin: 50px auto
+    #galaxyFit3 .galaxyFit3-monitoring
+        &__text
+            margin-bottom: 40px
+        &__img
+            margin-bottom: 15px
+        &__item
+            padding: 0 20px
+    #galaxyFit3 .galaxyFit3-health
+        &__inner
+            margin-top: 0
+        &__text
+            margin-bottom: 40px
+    #galaxyFit3 .galaxyFit3-ux
+        &__text
+            margin-bottom: 40px
+    #galaxyFit3 .galaxyFit3-safety
+        &__text
+            margin: 50px auto
+    #galaxyFit3 .galaxyFit3-control, #galaxyFit3 .galaxyFit3-watchfaces, #galaxyFit3 .galaxyFit3-account
+        &__text
+            margin-bottom: 40px
+    #galaxyFit3 .galaxyFit3-account
+        &__inner
+            margin-top: -50px
+
+@media screen and (max-width: 991.98px)
+    #galaxyFit3 .galaxyFit3-overview
+        &__items
+            height: 460px
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                &::before
+                    height: 65px
+                    bottom: -65px
+            &_03
+                top: 0
+                left: 45%
+    #galaxyFit3 .galaxyFit3-tracking
+        &__text
+            left: 0
+            right: 35%
+    #galaxyFit3 .galaxyFit3-sleepingMode
+        &__item-title
+            top: 10px
+
+@media screen and (max-width: 900.98px)
+    #galaxyFit3 .galaxyFit3-overview
+        &__items
+            height: 410px
+        &__item-title
+            top: 5px
+            left: 50%
+            margin-right: -50%
+            transform: translateX(-50%)
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                &::before
+                    height: 50px
+                    bottom: -50px
+            &_03
+                right: 3%
+    #galaxyFit3 .swiper-button-next, .swiper-rtl .swiper-button-prev,
+    #galaxyFit3 .swiper-button-prev, .swiper-rtl .swiper-button-next
+        top: 31%
+    #galaxyFit3 .galaxyFit3-safety
+        &__item-title
+            top: 15px
+            left: 10px
+
+@media screen and (max-width: 800.98px)
+    #galaxyFit3 .galaxyFit3-overview
+        &__items
+            height: 370px
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                &::before
+                    height: 40px
+                    bottom: -40px
+
+@media screen and (max-width: 767.98px)
+    #galaxyFit3 .galaxyFit3
+        &__container
+            h2
+                margin-bottom: 20px
+            h3
+                margin-bottom: 10px
+        &__box
+            margin-bottom: 30px
+            &_nomb
+                margin-bottom: 0
+    #galaxyFit3 .banner-box
+        &__inner
+            flex-direction: column
+        &__logo
+            padding: 60px 25px 80px
+    #galaxyFit3 .galaxyFit3-overview
+        &__items
+            height: 100%
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            margin: 0 40px
+            gap: 25px
+        &__item-title
+            top: 20px
+            padding: 10px 20px
+    #galaxyFit3 .galaxyFit3-display
+        &__body
+            flex-direction: column
+            align-items: center
+            margin-bottom: 25px
+        &__text
+            margin-bottom: 25px
+            padding: 0 20px
+            h2, p
+                text-align: center
+        &__data
+            padding: 0 20px
+    #galaxyFit3 .galaxyFit3-design
+        &__inner
+            margin-top: 0
+        &__text
+            margin-bottom: 25px
+        &__image
+            img
+                margin: 0 auto
+        &__items
+            flex-direction: column
+            gap: 20px
+        &__item-img
+            img
+                margin: 0 auto
+        &__item-text
+            &_01, &_04, &_05
+                left: 10%
+                top: 5%
+            &_02
+                left: 8.4%
+                right: 31.25%
+                &::before
+                    height: 120px
+                    bottom: -120px
+            &_03
+                top: 20px
+            &_04
+                transform: translateY(0)
+                &::before
+                    @include bg-image($url: url("../img/line.svg"))
+                    width: 166px
+                    height: 137px
+                    background-color: transparent
+                    transform: translateY(0)
+                    top: 70%
+                    right: -50%
+                &::after
+                    display: none
+    #galaxyFit3 .galaxyFit3-tracking
+        &__inner
+            padding-top: 0
+        &__text
+            position: unset
+            h2, p
+                text-align: center
+    #galaxyFit3 .galaxyFit3-sleepingMode
+        &__bg
+            border-top-left-radius: 25px
+            border-top-right-radius: 25px
+        &__content
+            flex-direction: column
+            gap: 20px
+        &__title
+            top: 10px
+            padding: 25px 20px
+        &__img
+            img
+                border-top-left-radius: 25px
+                border-top-right-radius: 25px
+        &__text
+            margin: 25px auto
+        &__items
+            margin-right: 0
+        &__item
+            &_01
+                margin-bottom: 20px
+    #galaxyFit3 .galaxyFit3-monitoring
+        &__text
+            margin-bottom: 25px
+        &__item
+            padding: 0 10px
+    #galaxyFit3 .swiper-button-next, .swiper-rtl .swiper-button-prev,
+    #galaxyFit3 .swiper-button-prev, .swiper-rtl .swiper-button-next
+        top: 29%
+    #galaxyFit3 .galaxyFit3-health
+        &__inner
+            margin-top: 25px
+        &__text
+            margin-bottom: 10px
+    #galaxyFit3 .galaxyFit3-ux
+        &__text
+            margin-bottom: 10px
+        &__content
+            flex-direction: column
+        &__subtitle
+            top: 18%
+            left: 50%
+            right: auto
+            transform: translate(-50%, 0)
+    #galaxyFit3 .galaxyFit3-safety
+        &__bg
+            border-top-left-radius: 25px
+            border-top-right-radius: 25px
+        &__img
+            img
+                border-top-left-radius: 25px
+                border-top-right-radius: 25px
+        &__text
+            margin: 25px auto 35px
+        &__items
+            flex-direction: column
+            align-items: center
+            gap: 20px
+        &__item
+            &_01
+                margin-right: 0
+        &__item-subtitle
+            left: 80%
+    #galaxyFit3 .galaxyFit3-control
+        &__text
+            margin-bottom: 10px
+    #galaxyFit3 .galaxyFit3-watchfaces
+        &__text
+            margin-bottom: 20px
+    #galaxyFit3 .galaxyFit3-account
+        &__inner
+            margin-top: 10px
+        &__text
+            margin-bottom: 20px
+
+@media screen and (max-width: 700.98px)
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                left: 5.4%
+                &::before
+                    height: 110px
+                    bottom: -110px
+            &_04
+                left: 20px
+
+@media screen and (max-width: 600.98px)
+    #galaxyFit3 .galaxyFit3-overview
+        &__text
+            padding: 10px 20px
+            margin-bottom: 10px
+        &__items
+            margin: 0 10px
+            gap: 10px
+    #galaxyFit3 .galaxyFit3-charge
+        &__text
+            padding: 10px 20px
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_01, &_05
+                left: 20px
+            &_02
+                &::before
+                    height: 100px
+                    bottom: -100px
+            &_04
+                &::before
+                    width: 135px
+                    height: 174px
+                    top: 60%
+    #galaxyFit3 .galaxyFit3-monitoring
+        &__card
+            padding: 0 50px
+    #galaxyFit3 .swiper-button-next, .swiper-rtl .swiper-button-prev,
+    #galaxyFit3 .swiper-button-prev, .swiper-rtl .swiper-button-next
+        top: 50%
+
+@media screen and (max-width: 550.98px)
+    #galaxyFit3 .galaxyFit3-overview
+        &__item-title
+            top: 10px
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                &::before
+                    height: 80px
+                    bottom: -80px
+            &_03
+                top: 10px
+            &_04
+                &::before
+                    width: 125px
+                    height: 101px
+
+@media screen and (max-width: 479.98px)
+    #galaxyFit3 .galaxyFit3
+        &__container
+            h2
+                margin: 10px 0
+        &__box
+            margin-bottom: 25px
+    #galaxyFit3 .banner-box
+        &__logo
+            padding: 20px 40px 40px
+    #galaxyFit3 .galaxyFit3-overview
+        &__text
+            padding: 10px 15px
+        &__item
+            margin: 0
+            padding: 0
+        &__item-title
+            top: 5px
+            padding: 10px
+            p
+                span
+                    font-size: 11px
+    #galaxyFit3 .galaxyFit3-charge
+        &__text
+            padding: 10px 15px
+    #galaxyFit3 .galaxyFit3-display
+        &__body
+            margin-bottom: 15px
+        &__text
+            margin-bottom: 15px
+            padding: 0 15px
+        &__data
+            margin: 0 -10px
+        &__inch, &__resol
+            padding: 0 10px
+        &__num
+            margin-bottom: 10px
+    #galaxyFit3 .galaxyFit3-design
+        &__text
+            margin-bottom: 15px
+        &__content
+            margin-top: 15px
+        &__items
+            gap: 10px
+            margin-bottom: 10px
+        &__item-text
+            padding: 10px
+            p
+                span
+                    font-size: 10px
+            &_02
+                top: 10px
+                &::before
+                    height: 60px
+                    bottom: -60px
+            &_03
+                top: 0
+            &_04
+                &::before
+                    width: 107px
+                    height: 81px
+    #galaxyFit3 .galaxyFit3-tracking
+        &__text
+            padding: 10px 15px
+    #galaxyFit3 .galaxyFit3-sleepingMode
+        &__item-title
+            top: 0
+            left: 10px
+        &__title
+            top: 0
+            padding: 0 15px
+    #galaxyFit3 .galaxyFit3-monitoring
+        &__text
+            padding: 0 15px
+            margin-bottom: 12px
+        &__card
+            padding: 0 35px
+        &__img
+            margin-bottom: 10px
+        &__item
+            padding: 0 5px
+    #galaxyFit3 .swiper-button-next
+        &::after
+            width: 20px
+            height: 20px
+    #galaxyFit3 .swiper-button-prev
+        &::after
+            width: 20px
+            height: 20px
+    #galaxyFit3 .galaxyFit3-health
+        &__text
+            padding: 0 15px
+    #galaxyFit3 .galaxyFit3-ux
+        &__text
+            padding: 0 15px
+    #galaxyFit3 .galaxyFit3-safety
+        &__title
+            top: 20px
+        &__text
+            margin: 5px auto 15px
+            padding: 0 15px
+        &__item-title
+            left: 10px
+            top: 0
+    #galaxyFit3 .galaxyFit3-control, #galaxyFit3 .galaxyFit3-watchfaces, #galaxyFit3 .galaxyFit3-account
+        &__text
+            padding: 0 15px
+
+@media screen and (max-width: 400.98px)
+    #galaxyFit3 .galaxyFit3
+        &__box
+            margin-bottom: 15px
+    #galaxyFit3 .galaxyFit3-overview
+        &__item-title
+            top: 0
+        p
+            span
+                font-size: 8px
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_02
+                &::before
+                    height: 35px
+                    bottom: -35px
+            &_04
+                &::before
+                    width: 93px
+                    height: 64px
+    #galaxyFit3 .galaxyFit3-safety
+        &__title
+            top: -10px
+        &__item-subtitle
+            left: 77%
+    #galaxyFit3 .galaxyFit3-sleepingMode
+        &__inner
+            padding-top: 35px
+
+@media screen and (max-width: 360.98px)
+    #galaxyFit3 .galaxyFit3-design
+        &__item-text
+            &_04
+                top: 0
+                left: 15px
+                &::before
+                    width: 67px
