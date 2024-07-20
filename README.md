@@ -1,7 +1,14 @@
 Layout for fitness bracelet Samsung Galaxy Fit3.
 This is the solution to the fitness bracelet Samsung Galaxy Fit3 layout.
 
-Table of contents -[Overview](#overview) -[The task](#the-task) -[Links](#links) -[My process](#my-process) -[Built with](#built-with) -[Author](#author)
+## Table of contents
+
+- [Overview](#overview)
+  - [The task](#the-task)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
 ## Overview
 
@@ -11,9 +18,9 @@ Users should be able to:
 
 View the optimal layout for the interface depending on their device's screen size
 
-The designs were created to the following widths:
--Mobile: 320px
--Desktop: 1440px
+- The designs were created to the following widths:
+  - Mobile: 320px
+  - Desktop: 1440px
 
 ### Links
 
